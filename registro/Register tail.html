@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agroprofits - Crear cuenta</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body
+  class="min-h-screen bg-[url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=1600')] bg-cover bg-center bg-no-repeat bg-fixed">
+
+  <!-- Overlay oscuro para que el contenido resalte sobre la foto -->
+  <div class="min-h-screen bg-black/70 flex flex-col">
+
+    <!-- Barra superior -->
+    <header class="w-full flex items-center justify-between px-6 py-4">
+      <div class="flex items-center gap-2">
+        <img src="../img/logoAgro_.svg" alt="Agroprofits" class="h-8 w-8 rounded-md object-cover">
+        <div>
+          <a href="../index.html" class="text-sm font-bold text-white hover:underline hover:text-[#10B981] transition-colors cursor-pointer">← Volver</a>
+
+          <p class="text-white font-bold leading-tight">Agroprofits</p>
+          <p class="text-neutral-400 text-xs leading-tight">Controla tu finca, optimiza tus ganancias.</p>
+        </div>
+      </div>
+      <p class="text-neutral-300 text-sm">
+        ¿Ya tienes cuenta? <a href="../login/login.html" class="text-emerald-400 hover:underline">Inicia sesión</a>
+      </p>
+    </header>
+
+    <!-- Contenedor central con el formulario -->
+    <main class="flex-1 flex items-center justify-center px-4 py-8">
+      <div class="w-full max-w-md bg-neutral-900/95 rounded-xl p-8">
+
+        <h1 class="text-white text-2xl font-bold mb-2">Crear cuenta</h1>
+        <p class="text-neutral-400 text-sm mb-6">
+          Al registrarte, aceptas los
+          <a href="#" class="text-emerald-400 hover:underline">Términos de servicio</a>
+          y la
+          <a href="#" class="text-emerald-400 hover:underline">Política de privacidad</a>.
+        </p>
+
+        <form class="space-y-4">
+
+          <div>
+            <label class="block text-neutral-300 text-sm font-medium mb-1" >Nombre completo </label>
+            <div
+              class="flex items-center bg-neutral-800 rounded-lg px-3 py-2 focus-within:ring-2 focus-within:ring-emerald-500">
+              <span class="text-neutral-400 mr-2">👤</span>
+              <input type="text" placeholder="Ej. Carlos Mendoza" required
+                class="bg-transparent outline-none text-white w-full text-sm placeholder-neutral-500">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-neutral-300 text-sm font-medium mb-1" >Correo electrónico</label>
+            <div
+              class="flex items-center bg-neutral-800 rounded-lg px-3 py-2 focus-within:ring-2 focus-within:ring-emerald-500">
+              <span class="text-neutral-400 mr-2">✉️</span>
+              <input type="email" placeholder="carlos@fincacafe.com" required
+                class="bg-transparent outline-none text-white w-full text-sm placeholder-neutral-500">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-neutral-300 text-sm font-medium mb-1" >Contraseña</label>
+            <div
+              class="flex items-center bg-neutral-800 rounded-lg px-3 py-2 focus-within:ring-2 focus-within:ring-emerald-500">
+              <span class="text-neutral-400 mr-2">🔒</span>
+              <input type="password" placeholder="••••••••" required
+                class="bg-transparent outline-none text-white w-full text-sm placeholder-neutral-500">
+              <span class="text-neutral-400 ml-2 cursor-pointer">👁️</span>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-neutral-300 text-sm font-medium mb-1" required >Confirmar contraseña</label>
+            <div
+              class="flex items-center bg-neutral-800 rounded-lg px-3 py-2 focus-within:ring-2 focus-within:ring-emerald-500">
+              <span class="text-neutral-400 mr-2">🔄</span>
+              <input type="password" placeholder="••••••••" required
+                class="bg-transparent outline-none text-white w-full text-sm placeholder-neutral-500">
+              <span class="text-neutral-400 ml-2 cursor-pointer">👁️</span>
+            </div>
+          </div>
+
+          <button type="submit"
+            class="w-full bg-emerald-500 hover:bg-emerald-800 transition-colors text-white font-semibold py-3 rounded-lg mt-2">
+            Crear cuenta
+          </button>
+
+        </form>
+      </div>
+    </main>
+
+  </div>
+
+</body>
+
+</html>
