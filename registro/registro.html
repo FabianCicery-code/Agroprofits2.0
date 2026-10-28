@@ -8,95 +8,152 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body
-  class="min-h-screen bg-[url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=1600')] bg-cover bg-center bg-no-repeat bg-fixed">
+<body class="bg-black min-h-screen">
+  <div class="relative w-full min-h-screen bg-neutral-900 grid grid-cols-1 md:grid-cols-2">
 
-  <!-- Overlay oscuro para que el contenido resalte sobre la foto -->
-  <div class="min-h-screen bg-black/70 flex flex-col">
+    <!-- Botón Volver: fijo arriba a la izquierda, a la altura del logo (escritorio y móvil) -->
+    <a href="../index.html"
+      class="absolute top-8 left-8 z-20 h-8 flex items-center text-sm font-bold text-white hover:underline hover:text-[#10B981] transition-colors cursor-pointer">←
+      Volver</a>
 
-    <!-- Barra superior -->
-    <header class="w-full flex items-center justify-between px-6 py-4">
-      <div class="flex items-center gap-2">
-        <img src="../img/logoAgro_.svg" alt="Agroprofits" class="h-8 w-8 rounded-md object-cover">
-        <div>
-          <a href="../index.html" class="text-sm font-bold text-white hover:underline hover:text-[#10B981] transition-colors cursor-pointer">← Volver</a>
+    <!-- Columna imagen (derecha en escritorio, arriba en móvil) -->
+    <div
+      class="order-1 md:order-2 relative flex flex-col justify-between p-8 min-h-[380px] md:min-h-0 bg-[url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=1200')] bg-cover bg-center bg-no-repeat">
+      <div class="absolute inset-0 bg-black/60"></div>
 
-          <p class="text-white font-bold leading-tight">Agroprofits</p>
-          <p class="text-neutral-400 text-xs leading-tight">Controla tu finca, optimiza tus ganancias.</p>
+      <div class="relative z-10 flex items-center justify-end">
+        <div class="flex items-center gap-2">
+          <img src="../img/logoAgro_.svg" alt="Agroprofits" class="h-8 w-8 rounded-md object-cover">
+          <span class="text-white text-2xl font-bold">Agroprofits</span>
         </div>
       </div>
-      <p class="text-neutral-300 text-sm">
-        ¿Ya tienes cuenta? <a href="../login/login.html" class="text-emerald-400 hover:underline">Inicia sesión</a>
-      </p>
-    </header>
 
-    <!-- Contenedor central con el formulario -->
-    <main class="flex-1 flex items-center justify-center px-4 py-8">
-      <div class="w-full max-w-md bg-neutral-900/95 rounded-xl p-8">
+      <div class="relative z-10">
+        <span class="inline-block bg-amber-100/10 text-amber-300 text-xs font-semibold px-3 py-1 rounded-full mb-4">
+          TECNOLOGÍA CAFETERA
+        </span>
+        <h1 class="text-white text-3xl font-bold leading-snug mb-4">
+          Controla tu finca, optimiza tus ganancias
+        </h1>
+        <p class="text-neutral-300 text-sm leading-relaxed">
+          Crea tu cuenta y empieza a llevar la contabilidad de tu cultivo: costos de producción,
+          inventarios de pergamino y proyecciones de cosecha en un solo lugar.
+        </p>
+      </div>
 
-        <h1 class="text-white text-2xl font-bold mb-2">Crear cuenta</h1>
-        <p class="text-neutral-400 text-sm mb-6">
+      <div class="relative z-10 flex gap-8">
+        <div>
+          <p class="text-amber-300 text-2xl font-bold">+1.2M</p>
+          <p class="text-neutral-300 text-xs">Quintales<br>Registrados</p>
+        </div>
+        <div>
+          <p class="text-amber-300 text-2xl font-bold">100%</p>
+          <p class="text-neutral-300 text-xs">Especializado<br>en Café</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Columna formulario (izquierda en escritorio) -->
+    <div class="order-2 md:order-1 flex flex-col justify-center items-center px-8 py-8 md:px-14 md:pt-24 md:pb-10">
+
+      <div class="w-full max-w-md flex justify-between text-xs text-neutral-500 mb-8">
+        <span>🌐 Español (Latinoamérica)</span>
+        <span>¿Necesitas ayuda? <a href="#" class="text-emerald-400 hover:underline">Soporte</a></span>
+      </div>
+
+      <div class="w-full max-w-md">
+        <h2 class="text-white text-2xl font-bold mb-3">Crear cuenta</h2>
+        <p class="text-neutral-400 text-sm mb-8">
           Al registrarte, aceptas los
           <a href="#" class="text-emerald-400 hover:underline">Términos de servicio</a>
           y la
           <a href="#" class="text-emerald-400 hover:underline">Política de privacidad</a>.
         </p>
 
-        <form class="space-y-4">
-
+        <form id="registroForm" class="space-y-5">
           <div>
-            <label class="block text-neutral-300 text-sm font-medium mb-1" >Nombre completo </label>
+            <label for="nombre" class="block text-neutral-300 text-sm font-medium mb-2">Nombre completo</label>
             <div
-              class="flex items-center bg-neutral-800 rounded-lg px-3 py-2 focus-within:ring-2 focus-within:ring-emerald-500">
-              <span class="text-neutral-400 mr-2">👤</span>
-              <input type="text" placeholder="Ej. Carlos Mendoza" required
-                class="bg-transparent outline-none text-white w-full text-sm placeholder-neutral-500">
+              class="flex items-center bg-white rounded-lg px-5 py-3.5 focus-within:ring-2 focus-within:ring-emerald-500">
+              <span class="text-neutral-500 mr-3">👤</span>
+              <input id="nombre" type="text" placeholder="Ej. Carlos Mendoza" required
+                class="bg-transparent outline-none text-neutral-900 w-full text-base placeholder-neutral-400">
             </div>
           </div>
 
           <div>
-            <label class="block text-neutral-300 text-sm font-medium mb-1" >Correo electrónico</label>
+            <label for="correo" class="block text-neutral-300 text-sm font-medium mb-2">Correo electrónico</label>
             <div
-              class="flex items-center bg-neutral-800 rounded-lg px-3 py-2 focus-within:ring-2 focus-within:ring-emerald-500">
-              <span class="text-neutral-400 mr-2">✉️</span>
-              <input type="email" placeholder="carlos@fincacafe.com" required
-                class="bg-transparent outline-none text-white w-full text-sm placeholder-neutral-500">
+              class="flex items-center bg-white rounded-lg px-5 py-3.5 focus-within:ring-2 focus-within:ring-emerald-500">
+              <span class="text-neutral-500 mr-3">✉️</span>
+              <input id="correo" type="email" placeholder="carlos@fincacafe.com" required
+                class="bg-transparent outline-none text-neutral-900 w-full text-base placeholder-neutral-400">
             </div>
           </div>
 
           <div>
-            <label class="block text-neutral-300 text-sm font-medium mb-1" >Contraseña</label>
+            <label for="clave" class="block text-neutral-300 text-sm font-medium mb-2">Contraseña</label>
             <div
-              class="flex items-center bg-neutral-800 rounded-lg px-3 py-2 focus-within:ring-2 focus-within:ring-emerald-500">
-              <span class="text-neutral-400 mr-2">🔒</span>
-              <input type="password" placeholder="••••••••" required
-                class="bg-transparent outline-none text-white w-full text-sm placeholder-neutral-500">
-              <span class="text-neutral-400 ml-2 cursor-pointer">👁️</span>
+              class="flex items-center bg-white rounded-lg px-5 py-3.5 focus-within:ring-2 focus-within:ring-emerald-500">
+              <span class="text-neutral-500 mr-3">🔒</span>
+              <input id="clave" type="password" placeholder="••••••••" required
+                class="bg-transparent outline-none text-neutral-900 w-full text-base placeholder-neutral-400">
+              <button type="button" data-toggle="clave" aria-label="Mostrar u ocultar contraseña"
+                class="text-neutral-500 ml-3 cursor-pointer">🙈</button>
             </div>
           </div>
 
           <div>
-            <label class="block text-neutral-300 text-sm font-medium mb-1" required >Confirmar contraseña</label>
+            <label for="clave2" class="block text-neutral-300 text-sm font-medium mb-2">Confirmar contraseña</label>
             <div
-              class="flex items-center bg-neutral-800 rounded-lg px-3 py-2 focus-within:ring-2 focus-within:ring-emerald-500">
-              <span class="text-neutral-400 mr-2">🔄</span>
-              <input type="password" placeholder="••••••••" required
-                class="bg-transparent outline-none text-white w-full text-sm placeholder-neutral-500">
-              <span class="text-neutral-400 ml-2 cursor-pointer">👁️</span>
+              class="flex items-center bg-white rounded-lg px-5 py-3.5 focus-within:ring-2 focus-within:ring-emerald-500">
+              <span class="text-neutral-500 mr-3">🔄</span>
+              <input id="clave2" type="password" placeholder="••••••••" required
+                class="bg-transparent outline-none text-neutral-900 w-full text-base placeholder-neutral-400">
+              <button type="button" data-toggle="clave2" aria-label="Mostrar u ocultar contraseña"
+                class="text-neutral-500 ml-3 cursor-pointer">🙈</button>
             </div>
+            <p id="errorClave" class="hidden text-red-400 text-xs mt-2">Las contraseñas no coinciden.</p>
           </div>
 
           <button type="submit"
-            class="w-full bg-emerald-500 hover:bg-emerald-800 transition-colors text-white font-semibold py-3 rounded-lg mt-2">
-            Crear cuenta
+            class="w-full bg-emerald-500 hover:bg-emerald-600 transition-colors text-white font-semibold text-base py-4 rounded-lg">
+            CREAR CUENTA
           </button>
 
+          <p class="text-center text-neutral-400 text-sm">
+            ¿Ya tienes cuenta?
+            <a href="../login/login.html" class="text-emerald-400 hover:underline">Inicia sesión</a>
+          </p>
         </form>
       </div>
-    </main>
 
+      <div class="w-full max-w-md flex justify-between text-xs text-neutral-500 mt-8">
+        <span>© 2026 Agroprofits. Todos los derechos reservados.</span>
+        <span><a href="#" class="hover:underline">Privacidad</a> · <a href="#"
+            class="hover:underline">Términos</a></span>
+      </div>
+    </div>
   </div>
 
+  <script>
+    // Mostrar / ocultar contraseña
+    document.querySelectorAll('[data-toggle]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var input = document.getElementById(btn.dataset.toggle);
+        var visible = input.type === 'text';
+        input.type = visible ? 'password' : 'text';
+        btn.textContent = visible ? '🙈' : '👁️';
+      });
+    });
+
+    // Validar que las contraseñas coincidan
+    document.getElementById('registroForm').addEventListener('submit', function (e) {
+      var coincide = document.getElementById('clave').value === document.getElementById('clave2').value;
+      document.getElementById('errorClave').classList.toggle('hidden', coincide);
+      if (!coincide) e.preventDefault();
+    });
+  </script>
 </body>
 
 </html>
